@@ -3,6 +3,7 @@
 
 
 #include <stdint.h>
+#include <glm/glm.hpp>
 
 
 
@@ -24,8 +25,7 @@ public:
 
 private:
 	GLFWwindow* m_pWindow = nullptr;
-	uint32_t m_screenWidth = 1366;
-	uint32_t m_screenHeight = 768;
+	glm::u32vec2 m_screenSize = glm::u32vec2(1366, 768);
 	bool m_IsInitialised = false;
 	bool m_showImguiDemoWindow = false;
 	bool m_showImplotDemoWindow = false;

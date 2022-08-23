@@ -24,7 +24,7 @@ App::App()
     glfwWindowHint(GLFW_SAMPLES, 4);
 
     // create window
-    m_pWindow = glfwCreateWindow(m_screenWidth, m_screenHeight, GetWindowName(), NULL, NULL);
+    m_pWindow = glfwCreateWindow(m_screenSize.x, m_screenSize.y, GetWindowName(), NULL, NULL);
     if (!m_pWindow)
     {
         glfwTerminate();
@@ -133,7 +133,7 @@ void App::OnWindowResize(GLFWwindow* pWindow, int width, int height)
     App* pApp = static_cast<App*>(glfwGetWindowUserPointer(pWindow));
     if (pApp)
     {
-        pApp->m_screenWidth = width;
-        pApp->m_screenHeight = height;
+        pApp->m_screenSize.x = width;
+        pApp->m_screenSize.y = height;
     }
 }
